@@ -1,19 +1,19 @@
 # BlockchainLecture
 https://www.youtube.com/watch?v=1g7YF1Wjsvw
 
-블록체인 소개 및 활용
+# 블록체인 소개 및 활용
 
-블록체인
+## 블록체인
 - 블록체인이란 관리 대상 데이터를 ‘블록’이라고 하는 소규모 데이터들이, P2P 방식을 기반으로 생성된 체인 형태의 연결고리 기반 분산 데이터 저장 환경에 저장되어 누구라도 임의로 수정할 수 없고 누구나 변경의 결과를 열람할 수 있는 분산 컴퓨팅 기술 기반의 데이터 위변조 방지 기술
 
-전자서명(Digital Signature)
+## 전자서명(Digital Signature)
 - PKI (Public Key Infrastructure) 기술을 이용한 사용자 확인, Tx 무결성, 부인 방지 제공
 - 자산 소유 증명, Tx 생성 행위 증명
 - Authentication(인증): reason to believe the message was created and sent by the claimed sender
 - Integrity(무결성): ensures that the message was not altered in transit
 - Non-repudiation(부인 방지): sender can not deny having sent the message later on
 
-위변조 불가능한 블록 생성 (분산원장)
+## 위변조 불가능한 블록 생성 (분산원장)
 - 블록체인의 가장 큰 특징인, 위변조 불가능한 블록 생성
 - 이전 Block의 Hash 값을 다음 Block에 포함시켜, Block 내의 값이 변경되면 다음 Block에서 확인할 수 있음
 - Hash Function
@@ -21,21 +21,21 @@ https://www.youtube.com/watch?v=1g7YF1Wjsvw
     - 해시 함수는 결정론적으로 작동해야 하며, 따라서 두 해시 값이 다르다면 그 해시값에 대한 원래 데이터도 달라짐
     - 한 방향 계산은 쉬우나 역방향 계산은 매우 어려운 수식
 
-위변조 불가능한 블록 생성
+## 위변조 불가능한 블록 생성
 - Block 생성 시 검증을 위해서 다수의 노드가 참여하여 합의를 통해서 생성된 Block 검증 함
 - 다수의 노드가 동일한 블록 데이터를 저장하고 있음
 
 
-합의 알고리즘에 따른 블록체인 분류
-- 블록생성 자격
+## 합의 알고리즘에 따른 블록체인 분류
+### - 블록생성 자격
     - PoW (Proof of Work)
     - PoS (Proof of Stake), DPOS (Delegated POS),
     - PoA (Proof of Authority)
-- 합의 방법 (블록 검증/선택)
+### - 합의 방법 (블록 검증/선택)
     - Nakamoto
     - PBFT (Practical Byzantine Fault Tolerant)
 
-- PoW (Proof of Work)
+### - PoW (Proof of Work)
     - Node identity management
         - Open, fully decentralized
     - Finality(완결성)
@@ -50,7 +50,7 @@ https://www.youtube.com/watch?v=1g7YF1Wjsvw
     - Power consumption
         - Very poor
 
-- PBFT
+### - PBFT
     - Node identity management
         - Permissioned
     - Finality(완결성)
@@ -65,10 +65,10 @@ https://www.youtube.com/watch?v=1g7YF1Wjsvw
     - Power consumption
         - Good 
 
-노드 참여 제한에 따른 블록체인 분류
-- 블록생성/검증 노드 참여 방법: public, consortium, private
+## 노드 참여 제한에 따른 블록체인 분류
+### - 블록생성/검증 노드 참여 방법: public, consortium, private
 
-- Public 블록체인
+### - Public 블록체인
     - 읽기 권한
         - 누구나 열람 가능
     - 거래 검증 및 승인
@@ -82,7 +82,7 @@ https://www.youtube.com/watch?v=1g7YF1Wjsvw
     - 예시
         - 비트코인, 이더리움
 
-- Private 블록체인
+### - Private 블록체인
     - 읽기 권한
         - 허가된 기관만 열람 가능
     - 거래 검증 및 승인
@@ -96,16 +96,16 @@ https://www.youtube.com/watch?v=1g7YF1Wjsvw
     - 예시
         - ICONLOOP’s loop chain, IBM Hyperledger Fabric, R3 Corda
 
-Oracle Problem
+### Oracle Problem
 - 블록체인 내의 데이터에 대해서는 신뢰하지만, 블록체인 밖으로부터의 데이터는 신뢰할 수 없음
 
 
-스마트 컨트랙트 (Smart Contract)
+### 스마트 컨트랙트 (Smart Contract)
 - 서면으로 이루어지던 계약을 코드로 구현하고, 특정 조건이 충족되었을때 해당 계약이 이행되게 하는 스크립트
 - 블록체인의 특성을 이용하여, 누구나 코드와 결과를 확인 가능하고, 위변조 불가능한 실행결과 생성
 
 
-스마트 컨트랙트 구현 시 주의사항
+### 스마트 컨트랙트 구현 시 주의사항
 - Code should be deterministic as it will run on multiple nodes
     - Should avoid any business logic that depends on non-deterministic input such as clock time, random number, or external data source
     - “Oracle” as an external data carrier
@@ -114,7 +114,7 @@ Oracle Problem
     - Do not make any long-running operations inside Smart Contract, nor store large data on blockchain.
 
 
-블록체인 주요 특징
+## 블록체인 주요 특징
 - 탈중앙화
     - 신뢰할 수 없는 환경에서 제3의 신뢰기관 없이 거래를 신뢰할 수 있어야 함
 
@@ -140,13 +140,13 @@ Oracle Problem
     - 개인 데이터 주권 확보
     - 개인정보 보호
 
-Blockchain as a Trust Platform
+### Blockchain as a Trust Platform
 - Trust is foundational element of business.
 - Maintaining trust is expensive, time-consuming, inefficient.
 - Blockchain removes the need of trusted 3rd parties.
 
 
-블록체인이 풀려고 하는 문제들(해외 적용사례)
+### 블록체인이 풀려고 하는 문제들(해외 적용사례)
 - 금융주도의 블록체인 활용 사례
 - 중개 기관이 필요하거나 디지털화되지 않은 서비스(SWIFT, 장외주식거래등)에 대해 절차 간소화, 자동화하는 데 주로 사용됨
     - 청산결제
@@ -172,7 +172,7 @@ Blockchain as a Trust Platform
             - 고가상품(다이아몬드)에 대한 정보를 등록, 관리하며 상품의 움직임을 기록함으로 보험사기 방지와 연계 가능
             - 디지털 통화를 이용하여 보험사와 구매자들이 보석의 거래 기록을 확인, Everledger라는 온라인 레코드북 만듦
 
-- 정부주도의 블록체인 활용 사례
+### - 정부주도의 블록체인 활용 사례
 - 거래 내역의 투명성, 추적 가능성 등을 이용하여 정보를 안전하고, 편리하게 보관할 수 있도록 기능을 제공함에 따라 공공 서비스를 위해 블록체인 활용함
     - 전자투표
         - 스페인
@@ -195,7 +195,7 @@ Blockchain as a Trust Platform
             - 정부에서 작성, 발행한 문서 등 기록물 관리 위해 블록체인을 활용
             - 국가 기록물, 스마트계약 및 기타 애플리케이션에 대한 비트코인 기술을 사용하기 위해 입법조치
 
-금투업권 블록체인 컨소시엄 - Chain ID
+### 금투업권 블록체인 컨소시엄 - Chain ID
 - 금융투자업 컨소시엄 참가사들을 대상으로 Authentication, Post-Trading, Trading 관련 시스템을 블록체인 기반으로 전환 및 상용화 추진
 - 중앙화된 인증 기관 대신 블록체인 특성을 활용한 인증 서비스망 구축으로, 제3자의 영향력을 축소하고 사용자 편의성을 향상시킴
 - 블록체인 기반 인증서 관리 시스템
@@ -220,7 +220,7 @@ Blockchain as a Trust Platform
         - 스마트 컨트랙트 기반으로 보안성 강화
 
 
-실용적 블록체인(Practical Blockchain)
+### 실용적 블록체인(Practical Blockchain)
 - 보험 및 헬스케어컨소시엄 - 스마트보험금청구서비스
     - 간편 인증을 통해서 보험금 청구에 필요한 의무기록을 보험사로 전송하고 보험금 지급까지 원스톱으로 처리
         - 블록체인 기술 적용으로 고객의 보험금 자동청구 실현
@@ -233,7 +233,7 @@ Blockchain as a Trust Platform
     - 서울시민이 믿고 사용할 수 있는 서비스 구축을 위해서 블록체인 플랫폼을 구축하는 시범사업 수행
 
 
-DID (Decentralized Identifier, 분산 ID, 자기주권 ID)
+## DID (Decentralized Identifier, 분산 ID, 자기주권 ID)
 - DID(탈중앙화 신원증명, Decentralized Identifier, 분산아이디, 이하 “DID”)는 기존 신원확인 방식과 달리, 중앙 시스템에 의해 통제되지 않으며 개개인이 자신의 정보에 완전한 통제권(self-sovereign)을 갖도록 하는 기술
     - ID/암호/개인정보가 개인의 통제 하에 있는 모바일 단말에만 저장됨
 
